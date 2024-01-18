@@ -96,7 +96,14 @@ $(document).ready(function() {
 	observer.observe(mediaLeft[0]);
   });
   
-  
+  function smoothScroll(targetId) {
+	var targetElement = $(targetId);
+	if (targetElement.length) {
+	  $('html, body').animate({
+		scrollTop: targetElement.offset().top
+	  }, 800);
+	}
+  }
 (function($){
 	$(document).ready(function(){
 	
