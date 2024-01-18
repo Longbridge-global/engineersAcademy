@@ -3,6 +3,100 @@
  * License: Creative Commons Attribution 3.0 License (https://creativecommons.org/licenses/by/3.0/)
  */
 
+$(document).ready(function() {
+	const heroCaption = $('.hero-caption');
+  
+	let hasAnimated = false; 
+  
+	const observer = new IntersectionObserver(entries => {
+	  entries.forEach(entry => {
+		if (entry.isIntersecting && !hasAnimated) {
+		  heroCaption.addClass('appear');
+		  hasAnimated = true; 
+		  observer.disconnect();
+		}
+	  });
+	}, { threshold: 0.5 });
+  
+	observer.observe(heroCaption[0]);
+  });
+  $(document).ready(function() {
+	const heroCaption = $('.isotope-item');
+  
+	let hasAnimated = false; 
+  
+	const observer = new IntersectionObserver(entries => {
+	  entries.forEach(entry => {
+		if (entry.isIntersecting && !hasAnimated) {
+		  heroCaption.addClass('appear');
+		  hasAnimated = true; 
+		  observer.disconnect();
+		}
+	  });
+	}, { threshold: 0.5 });
+  
+	observer.observe(heroCaption[0]);
+  });
+  $(document).ready(function() {
+	const listItems = $('.abt-list li');
+  
+	listItems.each(function(index, item) {
+	  const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+		  if (entry.isIntersecting && !entry.target.classList.contains('appear')) {
+			entry.target.classList.add('appear');
+			observer.disconnect(); // Disconnect after first animation
+		  }
+		});
+	  }, { threshold: 0.5 }); /* Adjust the threshold as needed */
+  
+	  observer.observe(item);
+	});
+  });
+  
+ 
+  
+	
+  $(document).ready(function() {
+	const mediaLeft = $('.media-body');
+  
+	let hasAnimatedMediaLeft = false; // Flag for mediaLeft animation
+  
+	const observer = new IntersectionObserver(entries => {
+	  entries.forEach(entry => {
+		if (entry.isIntersecting && !hasAnimatedMediaLeft) {
+		  mediaLeft.addClass('appear');
+		  hasAnimatedMediaLeft = true; // Prevent further animations
+  
+		  // Disconnect after first animation
+		  observer.disconnect();
+		}
+	  });
+	}, { threshold: 0.5 }); // Adjust the threshold as needed
+  
+	observer.observe(mediaLeft[0]);
+  });
+  $(document).ready(function() {
+	const mediaLeft = $('.media-left');
+  
+	let hasAnimatedMediaLeft = false; // Flag for mediaLeft animation
+  
+	const observer = new IntersectionObserver(entries => {
+	  entries.forEach(entry => {
+		if (entry.isIntersecting && !hasAnimatedMediaLeft) {
+		  mediaLeft.addClass('appear');
+		  hasAnimatedMediaLeft = true; // Prevent further animations
+  
+		  // Disconnect after first animation
+		  observer.disconnect();
+		}
+	  });
+	}, { threshold: 0.5 }); // Adjust the threshold as needed
+  
+	observer.observe(mediaLeft[0]);
+  });
+  
+  
 (function($){
 	$(document).ready(function(){
 	
